@@ -6,17 +6,16 @@
 // ------------ INSERT CODE HERE! ----------------------------
 
 
-Array.prototype.map = function(projectionFunction) {
-	var results = [];
-	this.forEach( itemInArray => 
-		
-    results.push(projectionFunction(itemInArray))
-    
-	);
+Array.prototype.map = function (projectionFunction) {
+    var results = [];
+    this.forEach(itemInArray =>
 
-	return results;
+        results.push(projectionFunction(itemInArray))
+
+    );
+
+    return results;
 };
 
 //testing: console must print 'true'
-console.log(JSON.stringify([1,2,3].map(function(x) { return x + 1; })) === '[2,3,4]')
-		
+console.log(JSON.stringify([1, 2, 3].map(function (x) { return x + 1; })) === '[2,3,4]')
