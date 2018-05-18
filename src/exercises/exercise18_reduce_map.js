@@ -1,6 +1,5 @@
 // Exercise 18 from http://reactivex.io/learnrx/
 
-function() {
     var boxarts = [
         { width: 200, height: 200, url: "http://cdn-0.nflximg.com/images/2891/Fracture200.jpg" },
         { width: 150, height: 200, url: "http://cdn-0.nflximg.com/images/2891/Fracture150.jpg" },
@@ -27,5 +26,5 @@ function() {
             return boxArt.url;
         })
     
-}
+
 
