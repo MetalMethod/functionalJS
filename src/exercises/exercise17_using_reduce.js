@@ -1,6 +1,6 @@
-// Exercise 14 from http://reactivex.io/learnrx/
+// Exercise 17 from http://reactivex.io/learnrx/
 
-//Exercise 17: Retrieve the largest rating.
+//Retrieve the largest rating.
 
 //Let's use our new reduce function to isolate the largest value in an array of ratings.
 
