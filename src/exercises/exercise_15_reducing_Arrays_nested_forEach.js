@@ -49,3 +49,8 @@ function() {
     console.log(largestBoxart)
     return largestBoxart;
 }
+
+//This process is a reduction because we're using the information we derived from the last computation to calculate the current value. 
+//However in the example above, we still have to specify the method of traversal. 
+//Wouldn't it be nice if we could just specify what operation we wanted to perform on the last and current value? 
+//Let's create a helper function to perform reductions on arrays.
