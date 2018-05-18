@@ -1,4 +1,5 @@
 // Exercise 12 from http://reactivex.io/learnrx/
+
 // Retrieve id, title, and a 150x200 box art url for every video
 
 //You've managed to flatten a tree that's two levels deep, let's try for three! 
