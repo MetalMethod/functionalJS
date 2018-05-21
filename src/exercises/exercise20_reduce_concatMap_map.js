@@ -77,14 +77,14 @@ function() {
 
     return movieLists.concatMap(movieList => {
         return movieList.videos.concatMap(video => {
-            return video.boxarts.reduce(boxart => function (minSize, currentSize) {
-                if ((minSize.boxart.width * minSize.boxart.height) < (currentSize.boxart.width * currentSize.boxart.height)) {
+            return video.boxarts.reduce(function (minSize, currentSize) {
+                if ((minSize.width * minSize.height) < (currentSize.width * currentSize.height)) {
                     return minSize
                 } else {
                     return currentSize
                 }
             }).map(boxart => {
-                return { id: video.id, title: video.title, boxart: boxart.url }
+                return {id: video.id, title: video.title, boxart: boxart.url }
             })
         })
     })
