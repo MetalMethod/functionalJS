@@ -1,3 +1,5 @@
+//Exercise 6 from  http://reactivex.io/learnrx/
+
 function() {
 	var newReleases = [
 		{
