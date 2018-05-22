@@ -1,3 +1,4 @@
+//from  http://reactivex.io/learnrx/
 //Exercise 26: Converting  Arrays intto Deeper Trees
 
 //Let's try creating a deeper tree structure. This time we have 4 separate arrays each containing 
@@ -98,36 +99,101 @@ function() {
 			{ videoId: 654356453, time: 984934 }
 		];
 
-    var result;
-
-    result = lists.map(list => {
-        return { 
-            name: list.name, videos: videos.filter(video => {
-                return list.id === video.listId;
-            }).concatMap(video => {
-                return Array.zip(
-                    //left
+   return lists.map(list => {
+       return {
+           name: list.name, videos: videos.filter( video =>{
+               return list.id === video.listId;
+           }).concatMap(video => {
+               return Array.zip(
+                    //left array, 
                     bookmarks.filter(bookmark => {
-                        return bookmark.videoId === video.id;
+                        return bookmark.videoId === video.id
                     }),
-                    //right
+
+                    //right array, 
                     boxarts.filter(boxart => {
                         return boxart.videoId === video.id;
-                    }).reduce(function(accumulatedValue, currentValue){
-                        return accumulatedValue.width * accumulatedValue.height < currentValue.width * currentValue.height ? accumulatedValue : currentValue;
-                    }), 
-                    //combiner
-                    function(bookmark, boxart){
-                        return { id: video.id, title: video.title, time: bookmark.time, boxart: boxart.url }
-                    }
-                )
-            })
-        }
-    })
-    
-    console.log(result)
+                    }).reduce(function (accum, current){
+                        return accum.width * accum.height < current.width * current.height ? accum : current;
+                    }),
 
-    return result;
+                    //combiner function
+                    function(bookmark, boxart){
+                        return {
+                            id: video.id, title: video.title, time: bookmark.time, boxart: boxart.url
+                        }
+                   }
+                )
+           })
+        }
+   })
 
 }
-		
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var result;
+
+// result = lists.map(list => {
+//     return { 
+//         name: list.name, videos: videos.filter(video => {
+//             return list.id === video.listId;
+//         }).concatMap(video => {
+//             return Array.zip(
+//                 //left
+//                 bookmarks.filter(bookmark => {
+//                     return bookmark.videoId === video.id;
+//                 }),
+//                 //right
+//                 boxarts.filter(boxart => {
+//                     return boxart.videoId === video.id;
+//                 }).reduce(function(accumulatedValue, currentValue){
+//                     return accumulatedValue.width * accumulatedValue.height < currentValue.width * currentValue.height ? accumulatedValue : currentValue;
+//                 }), 
+//                 //combiner
+//                 function(bookmark, boxart){
+//                     return { id: video.id, title: video.title, time: bookmark.time, boxart: boxart.url }
+//                 }
+//             )
+//         })
+//     }
+// })
+
+// console.log(result)
+
+// return result;

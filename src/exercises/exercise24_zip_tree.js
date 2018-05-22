@@ -1,3 +1,4 @@
+//from  http://reactivex.io/learnrx/
 //Exercise 24: Retrieve each video's id, title, middle interesting moment time, and smallest box art url.
 
 //This is a variation of the problem we solved earlier. This time each video has an interesting moments collection, 
