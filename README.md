@@ -13,3 +13,7 @@ Reactive Programming methods:
 - Observable.fromEvent()
 - take()
 - takeUntil()
+- Observable.create()
+- next()
+- error()
+- complete()
