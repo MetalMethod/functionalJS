@@ -28,14 +28,11 @@ function(sprite, spriteContainer) {
 		spriteContainerMouseMoves = Observable.fromEvent(spriteContainer, "mousemove"),
 		spriteContainerMouseUps = Observable.fromEvent(spriteContainer, "mouseup"),
 		spriteMouseDrags =
-			// For every mouse down event on the sprite...
-			spriteMouseDowns.
-				// --------------------------------------------------------
-				//					  INSERT CODE HERE
-				// --------------------------------------------------------
-				// Complete this expression...
-				// For every mouse down event, return the mouse move event
-				// sequence until a mouse up event occurs.
+            // For every mouse down event, return the mouse move event
+            // sequence until a mouse up event occurs.
+			spriteMouseDowns.concatMap(event => {
+                return event;
+            }).takeUntil(spriteContainerMouseUps)
 
 	// For each mouse drag event, move the sprite to the absolute page position.
 	spriteMouseDrags.forEach(function(dragPoint) {
