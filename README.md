@@ -18,3 +18,4 @@ Reactive Programming methods:
 - error()
 - complete()
 - throttleTime()
+- distinctUntilChanged()
