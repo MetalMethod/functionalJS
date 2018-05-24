@@ -24,7 +24,7 @@ function (getSearchResultSet, keyPresses, textBox) {
             
 			//Make sure the text is not empty
             filter(char => {
-                return char !== ' ' || char !== undefined || char !== null
+                return char.length > 0;
             }).
 
 			concatMap( text => {
