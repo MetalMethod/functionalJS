@@ -17,3 +17,4 @@ Reactive Programming methods:
 - next()
 - error()
 - complete()
+- throttleTime()
